@@ -7,6 +7,7 @@ body {
     background-position: center;  /* Centra la imagen de fondo */
 }
 
+
 .container {
     background-color: rgba(0, 0, 0, 0.6); /* Color negro con 60% de opacidad */
     padding: 20px;
@@ -36,6 +37,7 @@ body {
     border-top-right-radius: 15px;
 }
 
+
 .custom-card .card-body {
     flex-grow: 1; 
     display: flex;
@@ -62,6 +64,17 @@ h1 {
     background-color: #20232a; /* Un fondo oscuro similar al del espacio */
     color: #00FFAA;  /* Color verde similar al de la serie */
     border: 2px solid #00FFAA; /* Bordes verdes */
+    background-color: #282c34 !important; 
+    border: 2px solid #00FFAA !important;
+    box-shadow: 0 0 15px #00FFAA !important;
+}
+/* Estilo para el cuerpo del modal */
+.modal-body {
+    background-color: #282c34;
+    color: #00FFAA;
+    border-top: 2px solid #00FFAA;
+    border-bottom: 2px solid #00FFAA;
+    font-family: 'GetSchwifty', sans-serif;
 }
 
 /* Título del Modal */
@@ -88,6 +101,28 @@ h1 {
     background-color: #282c34; /* Fondo oscuro */
     color: #00FFAA; /* Color verde del texto */
 }
+h5, p {
+    border: 2px solid #00FFAA;
+    background: linear-gradient(45deg, #282c34, #1a1d21);
+    color: #00FFAA;
+    padding: 15px; 
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Para la animación */
+}
+
+h5 {
+    font-family: 'GetSchwifty', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 1em; /* Espacio adicional en la parte inferior para separar del contenido siguiente */
+}
+
+h5:hover, p:hover {
+    transform: rotate(-1deg) scale(1.05);
+    box-shadow: 3px 3px 20px rgba(0,255,170,0.6);
+}
+
 
 .modal-body input::placeholder {
     color: #00CC88; /* Color verde más oscuro para el texto de placeholder */
@@ -96,3 +131,4 @@ h1 {
 .modal-body label {
     font-family: 'GetSchwifty', sans-serif;
 }
+
