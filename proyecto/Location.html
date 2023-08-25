@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/location.css">
+    <link rel="stylesheet" type="text/css" href="css/Menu.css">
+    <title>Locaciones | Rickypedia</title>
+</head>
+
+<body>
+    <!-- Barra de navegación y el resto de la estructura se mantiene igual -->
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand font-weight-bold" href="Index.html">Rickypedia</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" id="registerNavItem">
+                    <button type="button" class="btn btn-light mr-2" data-toggle="modal" data-target="#registerModal">
+                        Registrarse
+                    </button>
+                </li>
+                <li class="nav-item" id="loginNavItem">
+                    <button type="button" class="btn btn-light mr-2" data-toggle="modal" data-target="#loginModal">
+                        Iniciar sesión
+                    </button>
+                </li>
+                <li class="nav-item" style="display: none;" id="welcomeMessage">
+                    <span class="navbar-text text-warning mr-2">Bienvenido <span id="usernameDisplay"></span></span>
+                </li>
+                <li class="nav-item" style="display: none;" id="logoutNavItem">
+                    <button id="logoutButton" class="btn btn-warning">Cerrar Sesión</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Paginación -->
+    
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Locaciones</h2>
+
+        <div class="row" id="locationList">
+            <!-- Ejemplo de una tarjeta de locación -->
+            <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-lg location-card" onclick="displayLocationDetail(ID_DE_LOCACION)">
+                        <img src="https://steamuserimages-a.akamaihd.net/ugc/782978849731797376/BFD2245A50178526DA6C12F5A804AEBA155D1828/" alt="${location.name}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">${location.name}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Repetir la tarjeta para cada locación -->
+        </div>
+
+
+    </div>
+
+    <!-- Modal para detalles de la locación (adaptado para mostrar detalles de la locación) -->
+    <div class="modal fade" id="locationDetailModal" tabindex="-1" role="dialog" aria-labelledby="locationDetailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content location-modal-content">
+                <div class="modal-header location-modal-header">
+                    <h5 class="modal-title" id="locationDetailModalLabel">Detalles de la Locación</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="locationDetailBody">
+                    <!-- Aquí se mostrarán los detalles de la locación -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modales de Registro e Inicio de Sesión y el resto del código se mantiene igual -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar Sesión</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginUsername">Usuario</label>
+                            <input type="text" class="form-control" id="loginUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Contraseña</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registerModalLabel">Registro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="registerName">Nombre</label>
+                            <input type="text" class="form-control" id="registerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerUsername">Usuario</label>
+                            <input type="text" class="form-control" id="registerUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="registerPassword">Contraseña</label>
+                            <input type="password" class="form-control" id="registerPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center mt-5">
+            <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
+            <!-- Añadir elementos de paginación según sea necesario -->
+            <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+        </ul>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts/location.js"></script> 
+    <script src="scripts/Login.js"></script>
+</body>
+</html>

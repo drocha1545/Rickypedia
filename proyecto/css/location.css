@@ -1,0 +1,210 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f5f7;
+}
+
+.navbar {
+    margin-bottom: 50px;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@font-face {
+    font-family: 'GetSchwifty';
+    src: url('../fonts/get_schwifty.ttf');
+}
+
+
+h2 {
+    font-family: 'GetSchwifty', sans-serif;
+    text-transform: uppercase;  /* Cambia el texto a mayúsculas */
+    color: #00FFAA;  /* Un color verde similar al de la serie */
+    text-shadow: 3px 3px 0px #555;  /* Sombra para darle un poco de profundidad */
+    font-size: 3em;  /* Ajusta el tamaño según lo necesites */
+    margin-bottom: 20px;
+}
+
+
+.card {
+    transition: transform .2s; /* Animación */
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.03); /* Zoom al pasar el mouse */
+}
+
+.card img {
+    height: 300px;  /* Aumentado la altura */
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card .btn {
+    margin-top: 10px; /* Espacio desde la parte superior */
+    align-self: center; /* Centrar el botón */
+}
+
+.modal .modal-dialog {
+    max-width: 400px;  /* Reduciendo el ancho del modal */
+}
+
+.modal img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.modal h4 {
+    margin-top: 20px;
+}
+
+.modal p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+.pagination .page-item:nth-child(-n+5),  /* Mostrar los primeros 4 números de página */
+.pagination .page-item:nth-last-child(-n+2) { /* Mostrar los últimos 2 números de página */
+    display: block;
+}
+
+/* Diferenciar las tarjetas de locaciones con un borde y un color de fondo diferente */
+.card.location-card {
+    border: 1px solid #d5d5d5;
+    background-color: #e9e9e9;
+}
+
+/* Puedes cambiar el color del título dentro de las tarjetas de locaciones */
+.card.location-card .card-title {
+    color: #007BFF; /* Color azul de Bootstrap, pero puedes elegir cualquier otro */
+}
+/* Estilo futurista para las tarjetas de locaciones */
+.location-card {
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #00ff80; /* Un color verde futurista */
+    border-radius: 15px;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.location-card .card-img-top {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    object-fit: cover;
+    transition: transform .2s;
+}
+
+.location-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.location-card .card-body {
+    color: white;
+    background: rgba(26, 26, 26, 0.7); /* Fondo semi-transparente */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilo futurista para el modal de locaciones */
+.location-modal-content {
+    background-color: #1a1a1a;
+    border: 5px solid #39ff14;
+    animation: portalPulse 3s infinite;
+}
+
+.location-modal-header {
+    border-bottom: 2px solid #39ff14;
+    color: white;
+    background-color: #1a1a1a;
+}
+
+/* Animación de borde similar a la modal de episodios */
+@keyframes portalPulse {
+    0%   { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    25%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    50%  { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    75%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    100% { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+}
+
+
+/* Animación de borde similar a la modal */
+@keyframes pulseBorder {
+    0%   { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    25%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    50%  { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    75%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    100% { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+}
+/* Ajustes para la imagen en el modal */
+.modal-location-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilo para el contenido del modal */
+.modal-location-info {
+    color: #E9E9E9; /* Color claro para mejorar la visibilidad */
+    padding: 10px;
+    background: rgba(26, 26, 26, 0.8); /* Fondo oscuro semi-transparente */
+    border-radius: 5px;
+}
+
+/* Ajustes en la modal para que se adapte mejor a la imagen proporcionada */
+.location-modal-content {
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+/* Aumentamos el tamaño de la fuente para una mejor legibilidad */
+.modal h4, .modal p {
+    font-size: 18px;
+}
+
+/* Ajustes para el botón de cerrar */
+.location-modal-header .close {
+    color: #E9E9E9;
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+/* Estilos para el título del modal */
+.modal-location-title {
+    font-size: 2.5rem;
+    color: #E9E9E9;
+    text-align: center;
+    border-bottom: 2px solid #39ff14;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Ajustes para la imagen en el modal */
+.modal-location-image {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #39ff14;
+}
+
+/* Ajustes para la información del modal */
+.modal-location-info {
+    padding-top: 10px; /* Alineación vertical con la imagen */
+}

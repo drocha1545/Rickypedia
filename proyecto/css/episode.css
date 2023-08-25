@@ -1,0 +1,84 @@
+.episode-card .card {
+    background-image: url('https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Rick-and-Morty-Interdimensional-Cable.jpg');
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #00ff80; /* Un color verde futurista */
+    border-radius: 15px;
+    transition: transform 0.3s;
+    overflow: hidden;
+}
+
+.episode-card .card:hover {
+    transform: scale(1.05);
+}
+
+.episode-card .card-body {
+    background-color: rgba(0, 0, 0, 0.6); /* Un fondo transparente oscuro para mejor lectura del texto */
+    color: #00ff80; /* Un color verde futurista para el texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.view-detail {
+    display: none; /* Ocultamos el botón y hacemos toda la tarjeta clickeable */
+}
+
+@keyframes pulseBorder {
+    0%   { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    25%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    50%  { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+    75%  { border-color: #1aff1a; box-shadow: 0 0 25px #39ff14, 0 0 15px #1aff1a; }
+    100% { border-color: #39ff14; box-shadow: 0 0 15px #39ff14, 0 0 25px #1aff1a; }
+}
+
+.episode-modal-content {
+    background-color: #1a1a1a;
+    border: 5px solid #39ff14;  
+    animation: pulseBorder 3s infinite;  
+}
+
+.episode-modal-header {
+    border-bottom: 2px solid #39ff14;
+    color: white;
+    background-color: #1a1a1a;
+    animation: pulseBorder 3s infinite;
+}
+
+
+.episode-modal-close {
+    color: white;
+    opacity: 1;
+}
+
+.modal-body {
+    color: white;
+    background-color: #1a1a1a;
+    border: none;
+}
+
+.episode-modal-image {
+    width: 50%;
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: 2px solid #39ff14;
+    animation: pulseBorder 3s infinite; 
+}
+
+@font-face {
+    font-family: 'GetSchwifty';
+    src: url('../fonts/get_schwifty.ttf');
+}
+
+
+h2 {
+    font-family: 'GetSchwifty', sans-serif;
+    text-transform: uppercase;  /* Cambia el texto a mayúsculas */
+    color: #00FFAA;  /* Un color verde similar al de la serie */
+    text-shadow: 3px 3px 0px #555;  /* Sombra para darle un poco de profundidad */
+    font-size: 3em;  /* Ajusta el tamaño según lo necesites */
+    margin-bottom: 20px;
+}
+
